@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complimentary resource locator for resources in Washington County, Pennsylvania. Find shelter, food, medical care, childcare, and more.">
+  <meta name="keywords" content="assistance, food, housing, warming, seniors, legal, childcare, formula, clothes">
+  <meta name="author" content="Washington County Department of Information Technology">
+  <title>Human Services Resource locator &gt; Washington County, PA</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/cerulean/bootstrap.min.css' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'>
+  <link rel="stylesheet" href="./style.css" />  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icon-512.png" />
+  <script src="script.js"></script>
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body onload="getFocus();">
+<header>
+  <div class="d-flex justify-content-center align-items-center flex-column text-center h-75 display-6 text-light">
+    Washington County PA<br />
+    Department of Human Services</div>
+</header>
+<main class="container" style="background-color: var(--app-light);">
+  <section id="sitewide-banner">
+    <div>Important messages will go here. <a onclick="dismissSwb();" class="btn btn-outline-light btn-sm float-end" href="#">Dismiss</a></div>
+</section>
+  <div class="input-group text-center mt-5 mb-5">
+    <input id="filterInput" type="text" class="form-control" placeholder="Type aging, childcare, etc.">
+    <button onclick="searchFindHelp();" class="btn" style="background-color: var(--app-success); color: var(--app-light)" type="button" id="button-addon1">
+      <i class="fa fa-search"></i>
+      Search
+    </button>
+  </div>
+  <div class="container-fluid">
+    <table class="table">
+      <thead></thead>
+      <tbody id="iconTable">
+        <tr>
+          <td class="col-sm-4" onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=covid-19&postal=15301&language=en'">
+            <i class="d-block fa-solid fa-syringe"></i>
+            COVID-19
+            <span class="keywords">vaccination, shot, vaxx, immunization</span>
+          </td>
+          <td class="col-sm-4" onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=child%20abuse&postal=15301';">
+              <i class="d-block fa fa-file-lines"></i>
+              Child Abuse<br />Prevention
+              <span class="keywords">cys, children, childline, child line</span>
+          </td>
+          <td class="col-sm-4" onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=help%20hotlines&search_type=service_tag&postal=15301&language=en'">
+            <i class="d-block fa fa-phone"></i>
+            Hotlines
+            <span class="keywords">
+              suicidal, suicide, 1800, 1-800
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-sm-4" onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=aging+services&postal=15301&language=en'">
+            <i class="d-block fa fa-sun"></i>
+            Aging Services
+            <span class="keywords">
+              seniors, silver, medicare
+            </span>
+          </td>
+          <td class="col-sm-4" onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=childcare&postal=15301&language=en'">
+            <i class="d-block fa fa-baby"></i>
+            Childcare
+          </td>
+          <td class="col-sm-4" onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=government&postal=15301&language=en'">
+            <i class="d-block fa fa-landmark"></i>
+            County<br />Government
+            <span class="keywords">
+              commissioner, treasurer, recorder of deeds, aging, veterans, behavioral health, mental health, cys, children, youth
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td  onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=disability&postal=15301&language=en'">
+            <i class="d-block fa fa-universal-access"></i>
+            Disability
+            <span class="keywords">
+              disability, accessibility
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=domestic+violence&postal=15301&language=en'">
+            <i class="d-block fa fa-ribbon" style="color: var(--bs-purple);"></i>
+            Domestic Violence
+            <span class="keywords">
+              domestic violence, dv, spousal, abuse
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=drug+and+alcohol+abuse&postal=15301&language=en'">
+            <i class="fa fa-champagne-glasses d-block"></i>
+            Drug & Alcohol Abuse
+            <span class="keywords">
+              durgs, rehab, alcohol, meth, fentanyl, dui, dwi, anonymous, 12 step
+            </span>
+          </td>
+        <tr>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=educational+opportunities&postal=15301&language=en'">
+            <i class="fa fa-graduation-cap d-block"></i>
+            Educational Opportunities
+            <span class="keywords">
+              school, loans, college, university, trade
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=employment&postal=15301&language=en'">
+            <i class="fa fa-briefcase d-block"></i>
+            Employment
+            <span class="keywords">
+              jpta, unemployment, jobs
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=energy+assistance&postal=15301&language=en'">
+            <i class="fa fa-lightbulb d-block"></i>
+            Energy Assistance
+            <span class="keywords">
+              liheap, west penn, electric, bill, payment, utility, assistance, cold, heat
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=federal+resources&postal=15301&language=en'">
+            <i class="fa fa-flag-usa d-block"></i>
+            Federal Resources
+            <span class="keywords">
+              united states, usa, senator, congress
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=food+banks&postal=15301&language=en'">
+            <i class="fa fa-utensils d-block"></i>
+            Food Banks
+            <span class="keywords">
+              hunger, hungry, bread, milk, cheese, formula
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=housing+and+homelessness&postal=15301&language=en'">
+            <i class="fa fa-house d-block"></i>
+            Housing & Homelessness
+            <span class="keywords">
+              shelter, warming center, men, women
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=legal+aid&postal=15301&language=en'">
+            <i class="fa fa-scale-balanced d-block"></i>
+            Legal Aid
+            <span class="keywords">
+              public defender, pd, lawyer, attorney
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=mental+health&postal=15301&language=en'">
+            <i class="fa fa-ribbon d-block text-success"></i>
+            Mental Health
+            <span class="keywords">
+              therapy, medication, bhds, depression, anxiety, add, adhd, si, suicidal
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=parental+support&postal=15301&language=en'">
+            <i class="fa fa-people-roof d-block"></i>
+            Parental Support
+          </td>
+        </tr>
+        <tr>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=pest+and+bed+bug+control&postal=15301&language=en'">
+            <i class="fa fa-bugs d-block"></i>
+            Pest & Bed Bug Control
+            <span class="keywords">
+              extermination, rodents, rats, mice, roaches, mattresses
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=self+sufficiency&postal=15301&language=en'">
+            <i class="fa fa-person d-block"></i>
+            Self-Sufficiency
+            <span class="keywords">
+              assisted living, visiting nurses
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=senior+centers&postal=15301&language=en'">
+            <i class="fa fa-sun d-block"></i>
+            Senior Centers
+            <span class="keywords">
+              retirement, silver
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=state+offices&postal=15301&language=en'">
+            <i class="fa fa-address-book d-block"></i>
+            State Offices
+            <span class="keywords">
+              pa, pennsylvania, senator, representative, birth certificate
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=transportation&postal=15301&language=en'">
+            <i class="fa fa-bus d-block"></i>
+            Transportation
+            <span class="keywords">
+              taxi, bus, schedule, routes
+            </span>
+          </td>
+          <td onclick="location.href='https://washingtonpa.findhelp.com/search/text?term=veterans+affairs&postal=15301&language=en'">
+            <i class="fa fa-medal d-block"></i>
+            Veterans Affairs
+            <span class="keywords">
+              dd214, dd-214, dd 214, va, military, benefits, marines, air force, navy, army, coast guard
+            </span>
+          </td>
+        </tr>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+<script>
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('sw.js')
+  }
+</script>
+</body>
+
+</html>

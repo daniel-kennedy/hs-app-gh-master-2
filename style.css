@@ -1,0 +1,64 @@
+/* Colors */
+:root {
+--app-light: #f9f8f5;
+--app-secondary: #9a8a8b;
+--app-dark: #222933; 
+--app-danger: #351417;
+--app-success: #007575;
+--app-warning: #be3b19;
+}
+
+/* * {
+  outline: 1px solid green;
+} */
+
+html, body {
+  background-color: var(--app-light);
+  max-width: 1000px;
+  min-width: 450px;
+  margin: 0 auto !important;
+}
+
+#sitewide-banner {
+  height: 6vh;
+  background-color: var(--bs-warning);
+  color: #fff;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1000px;
+  display: none;
+}
+
+header {
+  background-image: url("./wave-haikei.svg");
+  background-color: var(--app-dark);
+  height: 25vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 0 30px 30px;
+}
+
+.table>:not(caption)>*>* {
+  border-bottom-width: 0 !important;
+}
+
+td {
+  text-align: center;
+  max-width: 33%;
+}
+
+td > i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--app-success);
+  cursor: pointer !important;
+}
+
+/* Keywords help with filtering, however they should not be displayed */
+.keywords {
+  display: none;
+}
